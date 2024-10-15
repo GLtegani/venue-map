@@ -1,49 +1,103 @@
-import Link from "next/link";
+"use client";
+
 import { pragati_narrow } from "../styles/fonts/fonts";
-import { List } from "@phosphor-icons/react/dist/ssr";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/navbar";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
   return (
-    <header className={`${pragati_narrow.className} p-3`}>
-      <nav>
-        <ul className="flex items-center justify-between gap-4">
-          <li>
+    <header className={`${pragati_narrow.className}`}>
+      <Navbar shouldHideOnScroll isBordered onMenuOpenChange={setIsMenuOpen}>
+        <NavbarContent>
+          <NavbarBrand className="mr-2">
             {/* Logo */}
             <Link href={"/"} className="text-3xl">
               LOGO
             </Link>
-          </li>
+          </NavbarBrand>
 
-          <li className="hidden 2sm:block text-lg sm:text-xl md:text-2xl">
-            <Link href={"/"}>Home</Link>
-          </li>
+          <NavbarItem
+            className={`hidden 2sm:block ${
+              pathname === "/" ? "text-orange-600" : "text-black"
+            }`}
+          >
+            <Link className="text-lg sm:text-xl md:text-2xl" href={"/"}>
+              Home
+            </Link>
+          </NavbarItem>
 
-          <li>
-            <Link
-              href={"/about"}
-              className="hidden 2sm:block text-lg sm:text-xl md:text-2xl"
-            >
+          <NavbarItem
+            className={`hidden 2sm:block text-lg sm:text-xl md:text-2xl ${
+              pathname === "/about" ? "text-orange-600" : "text-black"
+            }`}
+          >
+            <Link className="text-lg sm:text-xl md:text-2xl" href={"/about"}>
               Conheça o Prédio
             </Link>
-          </li>
+          </NavbarItem>
 
-          <li>
-            <Link
-              href={"/contact"}
-              className="hidden 2sm:block text-lg sm:text-xl md:text-2xl 
-                  ls:pr-4 sm:pr-6 lg:pr-12"
-            >
+          <NavbarItem
+            className={`hidden 2sm:block text-lg sm:text-xl md:text-2xl 
+                  mr-4 ${
+                    pathname === "/contact" ? "text-orange-600" : "text-black"
+                  }`}
+          >
+            <Link className="text-lg sm:text-xl md:text-2xl" href={"/contact"}>
               Entre em Contato
             </Link>
-          </li>
+          </NavbarItem>
 
-          <li className="2sm:hidden">
-            <button className="text-4xl">
-              <List />
-            </button>
-          </li>
-        </ul>
-      </nav>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="2sm:hidden"
+          />
+
+          <NavbarMenu className="mb-8">
+            <NavbarMenuItem
+              className={`${
+                pathname === "/" ? "text-orange-600" : "text-black"
+              }`}
+            >
+              <Link className="w-full" href={"/"}>
+                Home
+              </Link>
+            </NavbarMenuItem>
+
+            <NavbarMenuItem
+              className={`${
+                pathname === "/about" ? "text-orange-600" : "text-black"
+              }`}
+            >
+              <Link className="w-full" href={"/about"}>
+                Conheça o Prédio
+              </Link>
+            </NavbarMenuItem>
+
+            <NavbarMenuItem
+              className={`${
+                pathname === "/contact" ? "text-orange-600" : "text-black"
+              }`}
+            >
+              <Link className="w-full" href={"/contact"}>
+                Entre em Contato
+              </Link>
+            </NavbarMenuItem>
+          </NavbarMenu>
+        </NavbarContent>
+      </Navbar>
     </header>
   );
 }
