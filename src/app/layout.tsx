@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body>
+      <body className="bg-chronos bg-no-repeat bg-cover h-screen bg-center">
         <Provider>
           <Header />
           {children}

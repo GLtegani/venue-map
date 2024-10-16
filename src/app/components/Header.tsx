@@ -25,27 +25,30 @@ export default function Header() {
         shouldHideOnScroll
         isBordered
         onMenuOpenChange={setIsMenuOpen}
-        className="p-3"
+        className="py-3"
       >
         <NavbarContent>
           <NavbarBrand>
             <Link
               href={"/"}
-              className={`flex items-center justify-center text-base md:text-xl gap-1 ${kite_one.className}`}
+              className={`flex text-white items-center justify-center text-base 
+                md:text-xl gap-1 ${kite_one.className}`}
             >
-              <Image
-                width={76}
-                height={76}
-                alt="NextUI hero Image"
-                src="/logotype-venue-map.png"
-              />
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
+                <Image
+                  width={76}
+                  height={76}
+                  alt="NextUI hero Image"
+                  src="/logotype-venue-map.png"
+                />
+              </div>
               Venue Map
             </Link>
           </NavbarBrand>
 
           <NavbarItem
             className={`hidden sm:block ${
-              pathname === "/" ? "text-cyan-800" : "text-black"
+              pathname === "/" ? "text-cyan-400" : "text-white"
             }`}
           >
             <Link className="text-base md:text-xl" href={"/"}>
@@ -55,7 +58,7 @@ export default function Header() {
 
           <NavbarItem
             className={`hidden sm:block ${
-              pathname === "/about" ? "text-cyan-800" : "text-black"
+              pathname === "/about" ? "text-cyan-400" : "text-white"
             }`}
           >
             <Link className="text-base md:text-xl" href={"/about"}>
@@ -65,7 +68,7 @@ export default function Header() {
 
           <NavbarItem
             className={`hidden sm:block mr-4 ${
-              pathname === "/contact" ? "text-cyan-800" : "text-black"
+              pathname === "/contact" ? "text-cyan-400" : "text-white"
             }`}
           >
             <Link className="text-base md:text-xl" href={"/contact"}>
@@ -75,12 +78,12 @@ export default function Header() {
 
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
+            className="sm:hidden text-white"
           />
 
           <NavbarMenu className="pt-7">
             <NavbarMenuItem
-              className={`${pathname === "/" ? "text-cyan-800" : "text-black"}`}
+              className={`${pathname === "/" ? "text-cyan-400" : "text-white"}`}
             >
               <Link className="w-full text-xl" href={"/"}>
                 Home
@@ -89,7 +92,7 @@ export default function Header() {
 
             <NavbarMenuItem
               className={`${
-                pathname === "/about" ? "text-cyan-800" : "text-black"
+                pathname === "/about" ? "text-cyan-400" : "text-white"
               }`}
             >
               <Link className="w-full text-xl" href={"/about"}>
@@ -99,7 +102,7 @@ export default function Header() {
 
             <NavbarMenuItem
               className={`${
-                pathname === "/contact" ? "text-cyan-800" : "text-black"
+                pathname === "/contact" ? "text-cyan-400" : "text-white"
               }`}
             >
               <Link className="w-full text-xl" href={"/contact"}>
