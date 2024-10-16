@@ -15,7 +15,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       screens: {
-        "2sm": "400px",
+        "2sm": "490px",
         ls: "540px",
       },
     },

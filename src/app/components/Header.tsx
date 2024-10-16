@@ -1,5 +1,6 @@
 "use client";
 
+import { Image } from "@nextui-org/image";
 import { pragati_narrow } from "../styles/fonts/fonts";
 import {
   Navbar,
@@ -20,12 +21,21 @@ export default function Header() {
 
   return (
     <header className={`${pragati_narrow.className}`}>
-      <Navbar shouldHideOnScroll isBordered onMenuOpenChange={setIsMenuOpen}>
+      <Navbar
+        shouldHideOnScroll
+        isBordered
+        onMenuOpenChange={setIsMenuOpen}
+        className="p-3"
+      >
         <NavbarContent>
           <NavbarBrand className="mr-2">
             {/* Logo */}
-            <Link href={"/"} className="text-3xl">
-              LOGO
+            <Link href={"/"}>
+              <Image
+                alt="NextUI hero Image"
+                src="/rounded-in-photoretrica.jpg"
+                className="w-16 h-16"
+              />
             </Link>
           </NavbarBrand>
 
@@ -34,28 +44,27 @@ export default function Header() {
               pathname === "/" ? "text-orange-600" : "text-black"
             }`}
           >
-            <Link className="text-lg sm:text-xl md:text-2xl" href={"/"}>
+            <Link className="text-xl md:text-2xl" href={"/"}>
               Home
             </Link>
           </NavbarItem>
 
           <NavbarItem
-            className={`hidden 2sm:block text-lg sm:text-xl md:text-2xl ${
+            className={`hidden 2sm:block ${
               pathname === "/about" ? "text-orange-600" : "text-black"
             }`}
           >
-            <Link className="text-lg sm:text-xl md:text-2xl" href={"/about"}>
+            <Link className="text-xl md:text-2xl" href={"/about"}>
               Conheça o Prédio
             </Link>
           </NavbarItem>
 
           <NavbarItem
-            className={`hidden 2sm:block text-lg sm:text-xl md:text-2xl 
-                  mr-4 ${
-                    pathname === "/contact" ? "text-orange-600" : "text-black"
-                  }`}
+            className={`hidden 2sm:block mr-4 ${
+              pathname === "/contact" ? "text-orange-600" : "text-black"
+            }`}
           >
-            <Link className="text-lg sm:text-xl md:text-2xl" href={"/contact"}>
+            <Link className="text-xl md:text-2xl" href={"/contact"}>
               Entre em Contato
             </Link>
           </NavbarItem>
@@ -65,13 +74,13 @@ export default function Header() {
             className="2sm:hidden"
           />
 
-          <NavbarMenu className="mb-8">
+          <NavbarMenu className="pt-7">
             <NavbarMenuItem
               className={`${
                 pathname === "/" ? "text-orange-600" : "text-black"
               }`}
             >
-              <Link className="w-full" href={"/"}>
+              <Link className="w-full text-xl" href={"/"}>
                 Home
               </Link>
             </NavbarMenuItem>
@@ -81,7 +90,7 @@ export default function Header() {
                 pathname === "/about" ? "text-orange-600" : "text-black"
               }`}
             >
-              <Link className="w-full" href={"/about"}>
+              <Link className="w-full text-xl" href={"/about"}>
                 Conheça o Prédio
               </Link>
             </NavbarMenuItem>
@@ -91,7 +100,7 @@ export default function Header() {
                 pathname === "/contact" ? "text-orange-600" : "text-black"
               }`}
             >
-              <Link className="w-full" href={"/contact"}>
+              <Link className="w-full text-xl" href={"/contact"}>
                 Entre em Contato
               </Link>
             </NavbarMenuItem>
