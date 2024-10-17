@@ -49,7 +49,7 @@ export default function Header() {
           <NavbarItem
             className={`hidden sm:block ${
               pathname === "/" ? "text-cyan-400" : "text-white"
-            }`}
+            } hover:text-cyan-400 transition`}
           >
             <Link className="text-base md:text-xl" href={"/"}>
               Home
@@ -59,7 +59,7 @@ export default function Header() {
           <NavbarItem
             className={`hidden sm:block ${
               pathname === "/about" ? "text-cyan-400" : "text-white"
-            }`}
+            } hover:text-cyan-400 transition`}
           >
             <Link className="text-base md:text-xl" href={"/about"}>
               Conheça o Prédio
@@ -69,7 +69,7 @@ export default function Header() {
           <NavbarItem
             className={`hidden sm:block mr-4 ${
               pathname === "/contact" ? "text-cyan-400" : "text-white"
-            }`}
+            } hover:text-cyan-400 transition`}
           >
             <Link className="text-base md:text-xl" href={"/contact"}>
               Entre em Contato
@@ -83,7 +83,8 @@ export default function Header() {
 
           <NavbarMenu className="pt-7">
             <NavbarMenuItem
-              className={`${pathname === "/" ? "text-cyan-400" : "text-white"}`}
+              className={`${pathname === "/" ? "text-cyan-400" : "text-white"}
+                hover:text-cyan-400 transition`}
             >
               <Link className="w-full text-xl" href={"/"}>
                 Home
@@ -93,7 +94,7 @@ export default function Header() {
             <NavbarMenuItem
               className={`${
                 pathname === "/about" ? "text-cyan-400" : "text-white"
-              }`}
+              } hover:text-cyan-400 transition`}
             >
               <Link className="w-full text-xl" href={"/about"}>
                 Conheça o Prédio
@@ -103,7 +104,7 @@ export default function Header() {
             <NavbarMenuItem
               className={`${
                 pathname === "/contact" ? "text-cyan-400" : "text-white"
-              }`}
+              } hover:text-cyan-400 transition`}
             >
               <Link className="w-full text-xl" href={"/contact"}>
                 Entre em Contato

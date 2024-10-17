@@ -17,6 +17,7 @@ const config: Config = {
       screens: {
         "3sm": "320px",
         "2sm": "490px",
+        "2md": "876px",
         ls: "540px",
       },
       backgroundImage: {

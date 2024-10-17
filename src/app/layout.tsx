@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import { Provider } from "./components/Provider";
-import Header from "./components/Header";
 
 export const metadata: Metadata = {
   title: "Venue Map",
@@ -15,9 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className="bg-chronos bg-no-repeat bg-cover h-screen bg-center">
+      <body>
         <Provider>
-          <Header />
           {children}
         </Provider>
       </body>
