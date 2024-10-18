@@ -46,35 +46,43 @@ export default function Header() {
             </Link>
           </NavbarBrand>
 
-          <NavbarItem
-            className={`hidden sm:block ${
-              pathname === "/" ? "text-cyan-400" : "text-white"
-            } hover:text-cyan-400 transition`}
-          >
-            <Link className="text-base md:text-xl" href={"/"}>
-              Home
-            </Link>
-          </NavbarItem>
+          <div className="flex items-center justify-center gap-7">
+            <NavbarItem
+              className={`hidden sm:block ${
+                pathname === "/" ? "text-cyan-400" : "text-white"
+              } hover:text-cyan-400 transition`}
+            >
+              <Link className="text-base md:text-xl lg:text-2xl" href={"/"}>
+                Home
+              </Link>
+            </NavbarItem>
 
-          <NavbarItem
-            className={`hidden sm:block ${
-              pathname === "/about" ? "text-cyan-400" : "text-white"
-            } hover:text-cyan-400 transition`}
-          >
-            <Link className="text-base md:text-xl" href={"/about"}>
-              Conheça o Prédio
-            </Link>
-          </NavbarItem>
+            <NavbarItem
+              className={`hidden sm:block ${
+                pathname === "/about" ? "text-cyan-400" : "text-white"
+              } hover:text-cyan-400 transition`}
+            >
+              <Link
+                className="text-base md:text-xl lg:text-2xl"
+                href={"/about"}
+              >
+                Conheça o Prédio
+              </Link>
+            </NavbarItem>
 
-          <NavbarItem
-            className={`hidden sm:block mr-4 ${
-              pathname === "/contact" ? "text-cyan-400" : "text-white"
-            } hover:text-cyan-400 transition`}
-          >
-            <Link className="text-base md:text-xl" href={"/contact"}>
-              Entre em Contato
-            </Link>
-          </NavbarItem>
+            <NavbarItem
+              className={`hidden sm:block mr-4 ${
+                pathname === "/contact" ? "text-cyan-400" : "text-white"
+              } hover:text-cyan-400 transition`}
+            >
+              <Link
+                className="text-base md:text-xl lg:text-2xl"
+                href={"/contact"}
+              >
+                Entre em Contato
+              </Link>
+            </NavbarItem>
+          </div>
 
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
