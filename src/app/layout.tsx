@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import { Provider } from "./components/Provider";
+import Header from "./components/Header";
+import { ScrollShadow } from "@nextui-org/scroll-shadow";
 
 export const metadata: Metadata = {
   title: "Venue Map",
@@ -16,7 +18,10 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <Provider>
-          {children}
+          <ScrollShadow>
+            <Header />
+            {children}
+          </ScrollShadow>
         </Provider>
       </body>
     </html>

@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { archivo_narrow } from "../../styles/fonts/fonts";
-import Header from "../Header";
 
 export default function GuestSection() {
   return (
-    <div className="bg-chronos bg-no-repeat bg-cover h-screen bg-center">
-      <Header />
-      <main className="flex flex-col h-screen justify-center text-left ml-6 mr-3">
+    <div
+      className="bg-chronos bg-no-repeat bg-cover h-screen bg-center
+        flex flex-col justify-center items-start"
+    >
+      <main className="flex flex-col justify-center text-left ml-6 mr-3 mt-10">
         <div
-          className={`${archivo_narrow.className} text-2xl xl:text-7xl 3sm:text-3xl 2sm:text-4xl md:text-5xl flex flex-col 
-            justify-center gap-1 lg:gap-4 lg:text-6xl font-bold text-white
-          `}
+          className={`${archivo_narrow.className} text-2xl xl:text-7xl 3sm:text-3xl 
+            2sm:text-4xl md:text-5xl flex flex-col 
+              justify-center gap-1 lg:gap-4 lg:text-6xl font-bold text-white
+            `}
         >
           <h1>Prédio Comercial</h1>
           <h2 className="text-cyan-400">Chronos Corporate</h2>
@@ -30,7 +32,7 @@ export default function GuestSection() {
           <div className="mt-4 mb-8">
             <Link
               className="text-base md:text-xl p-2 hover:bg-transparent border 
-              hover:border-white hover:text-white bg-white rounded-lg transition"
+                hover:border-white hover:text-white bg-white rounded-lg transition"
               href={"/about"}
             >
               Conheça o Prédio

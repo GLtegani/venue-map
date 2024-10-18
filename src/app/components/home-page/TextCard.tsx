@@ -7,6 +7,8 @@ interface TextCardProps {
   cardText: string[];
   cardFooterPath: string;
   cardFooterText: string;
+  isRight?: boolean;
+  isLeft?: boolean;
 }
 
 export default function TextCard({
@@ -14,48 +16,121 @@ export default function TextCard({
   cardText,
   cardFooterPath,
   cardFooterText,
+  isRight,
+  isLeft,
 }: TextCardProps) {
-  return (
-    <Card className="p-1 md:p-12 lg:p-14 2md:mr-20 lg:mr-72 lg:ml-8 text-left shadow-lg shadow-cyan-400">
-      <CardHeader
-        className={`${archivo_narrow.className} text-2xl md:text-5xl  
-            lg:text-6xl font-bold text-black
-          `}
+  if (isLeft || !isRight) {
+    return (
+      <Card
+        className="p-5 max-w-5xl w-11.5/12 mx-auto 2sm:w-10/12 1sm:w-9/12 1md:w-8/12 2md:mr-64 
+      lg:mr-80 xl:mr-96 text-left shadow-lg shadow-cyan-400"
       >
-        <div>
-          {cardTitle.map((title, index) => (
-            <h2 key={index}>{title}</h2>
-          ))}
-          {/* <h2>Procurando Sala Comercial</h2>
-          <h2>
-            Para <span className="underline decoration-cyan-400">Aluguel</span>{" "}
-            ou <span className="underline decoration-cyan-400">Compra?</span>
-          </h2>
-          <h2>Entre em Contato</h2>
-          <h2>Com Nossos Corretores</h2> */}
-        </div>
-      </CardHeader>
-
-      <CardBody>
-        <div className="text-black lg:text-2xl text-lg sm:text-xl">
-          {cardText.map((text, index) => (
-            <p key={index}>{text}</p>
-          ))}
-          {/* <p>Salas com vista para a ponte metálica, </p>
-          <p>segurança 24h por dia e ótimos </p>
-          <p className="mb-1">espaços para acomodar a sua empresa!</p>
-          <p>Clique aqui para saber mais</p> */}
-        </div>
-      </CardBody>
-      <CardFooter>
-        <Link
-          className="text-base md:text-xl p-2 hover:bg-transparent border 
-                hover:border-black hover:text-black bg-black text-white rounded-lg transition"
-          href={cardFooterPath}
+        {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
+        <CardHeader
+          className={`${archivo_narrow.className} text-2xl md:text-5xl  
+              lg:text-6xl font-bold text-black
+            `}
         >
-          {cardFooterText}
-        </Link>
-      </CardFooter>
-    </Card>
-  );
+          <div>
+            {cardTitle.map((title, index) => {
+              const titleParts = title.split(" ");
+
+              return (
+                <h2 className="mb-1" key={index}>
+                  {titleParts.map((part, partIndex) => {
+                    if (part.startsWith("&")) {
+                      const styledPart = part.slice(1);
+                      return (
+                        <span
+                          key={partIndex}
+                          className="underline decoration-cyan-400"
+                        >
+                          {styledPart}{" "}
+                        </span>
+                      );
+                    }
+
+                    return <span key={partIndex}>{part} </span>;
+                  })}
+                </h2>
+              );
+            })}
+          </div>
+        </CardHeader>
+        <CardBody>
+          <div className="text-black lg:text-2xl text-lg sm:text-xl">
+            {cardText.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+          </div>
+        </CardBody>
+        <CardFooter>
+          <Link
+            className="text-base md:text-xl p-2 hover:bg-transparent border 
+                  hover:border-black hover:text-black bg-black text-white rounded-lg transition"
+            href={cardFooterPath}
+          >
+            {cardFooterText}
+          </Link>
+        </CardFooter>
+      </Card>
+    );
+  } else if (isRight) {
+    return (
+      <Card
+        className="p-5 max-w-5xl w-11.5/12 mx-auto 2sm:w-10/12 1sm:w-9/12 1md:w-8/12 2md:ml-64 
+      lg:ml-80 xl:ml-96 text-left shadow-lg shadow-cyan-400"
+      >
+        {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
+        <CardHeader
+          className={`${archivo_narrow.className} text-2xl md:text-5xl  
+              lg:text-6xl font-bold text-black
+            `}
+        >
+          <div>
+            {cardTitle.map((title, index) => {
+              const titleParts = title.split(" ");
+
+              return (
+                <h2 className="mb-1" key={index}>
+                  {titleParts.map((part, partIndex) => {
+                    if (part.startsWith("&")) {
+                      const styledPart = part.slice(1);
+                      return (
+                        <span
+                          key={partIndex}
+                          className="underline decoration-cyan-400"
+                        >
+                          {styledPart}{" "}
+                        </span>
+                      );
+                    }
+
+                    return <span key={partIndex}>{part} </span>;
+                  })}
+                </h2>
+              );
+            })}
+          </div>
+        </CardHeader>
+
+        <CardBody>
+          <div className="text-black lg:text-2xl text-lg sm:text-xl">
+            {cardText.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+          </div>
+        </CardBody>
+        <CardFooter>
+          <Link
+            className="text-base md:text-xl p-2 hover:bg-transparent border 
+                  hover:border-black hover:text-black bg-black text-white rounded-lg transition"
+            href={cardFooterPath}
+          >
+            {cardFooterText}
+          </Link>
+        </CardFooter>
+      </Card>
+    );
+  }
 }

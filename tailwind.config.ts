@@ -17,12 +17,17 @@ const config: Config = {
       screens: {
         "3sm": "320px",
         "2sm": "490px",
+        "1sm": "590px",
         "2md": "876px",
+        "1md": "740px",
         ls: "540px",
       },
       backgroundImage: {
         chronos:
           "linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(/chronos.png)",
+      },
+      width: {
+        "11.5/12": "95%",
       },
     },
   },
