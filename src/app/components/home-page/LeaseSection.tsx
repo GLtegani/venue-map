@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { archivo_narrow } from "../styles/fonts/fonts";
+import { archivo_narrow } from "../../styles/fonts/fonts";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import TextCard from "./TextCard";
 

@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { archivo_narrow } from "../styles/fonts/fonts";
+import { archivo_narrow } from "../../styles/fonts/fonts";
 import Link from "next/link";
 
 interface TextCardProps {

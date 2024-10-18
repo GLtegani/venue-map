@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { archivo_narrow } from "../styles/fonts/fonts";
-import Header from "./Header";
+import { archivo_narrow } from "../../styles/fonts/fonts";
+import Header from "../Header";
 
 export default function GuestSection() {
   return (
     <div className="bg-chronos bg-no-repeat bg-cover h-screen bg-center">
       <Header />
-      <main className="flex flex-col justify-center text-left ml-6 mr-3 mt-12">
+      <main className="flex flex-col h-screen justify-center text-left ml-6 mr-3">
         <div
-          className={`${archivo_narrow.className} text-2xl 3sm:text-3xl 2sm:text-4xl md:text-5xl flex flex-col 
+          className={`${archivo_narrow.className} text-2xl xl:text-7xl 3sm:text-3xl 2sm:text-4xl md:text-5xl flex flex-col 
             justify-center gap-1 lg:gap-4 lg:text-6xl font-bold text-white
           `}
         >
@@ -27,7 +27,7 @@ export default function GuestSection() {
             <p>Clique aqui para saber mais</p>
           </div>
 
-          <div className="mt-4 md:mt-6">
+          <div className="mt-4 mb-8">
             <Link
               className="text-base md:text-xl p-2 hover:bg-transparent border 
               hover:border-white hover:text-white bg-white rounded-lg transition"
