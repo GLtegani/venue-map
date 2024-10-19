@@ -5,8 +5,8 @@ import Link from "next/link";
 interface TextCardProps {
   cardTitle: string[];
   cardText: string[];
-  cardFooterPath: string;
-  cardFooterText: string;
+  cardFooterPath?: string;
+  cardFooterText?: string;
   isRight?: boolean;
   isLeft?: boolean;
 }
@@ -22,7 +22,7 @@ export default function TextCard({
   if (isLeft || !isRight) {
     return (
       <div className="flex justify-center 2.5sm:justify-start items-center">
-        <Card className="p-5 xl:p-24 xl:ml-20 text-left shadow-lg shadow-cyan-400">
+        <Card className="p-5 xl:p-24 xl:ml-14 text-left shadow-lg shadow-cyan-400">
           {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
           <CardHeader
             className={`${archivo_narrow.className} text-2xl md:text-5xl  
@@ -62,22 +62,24 @@ export default function TextCard({
               ))}
             </div>
           </CardBody>
-          <CardFooter>
-            <Link
-              className="text-base md:text-xl p-2 hover:bg-transparent border 
-                    hover:border-black hover:text-black bg-black text-white rounded-lg transition"
-              href={cardFooterPath}
-            >
-              {cardFooterText}
-            </Link>
-          </CardFooter>
+          {cardFooterPath != null && cardFooterText != null ? (
+            <CardFooter>
+              <Link
+                className="text-base md:text-xl p-2 hover:bg-transparent border 
+                      hover:border-black hover:text-black bg-black text-white rounded-lg transition"
+                href={cardFooterPath}
+              >
+                {cardFooterText}
+              </Link>
+            </CardFooter>
+          ) : null}
         </Card>
       </div>
     );
   } else if (isRight) {
     return (
       <div className="flex justify-center 2.5sm:justify-end items-center">
-        <Card className="p-5 xl:p-24 xl:mr-20 text-left shadow-lg shadow-cyan-400">
+        <Card className="p-5 xl:p-24 xl:mr-14 text-left shadow-lg shadow-cyan-400">
           {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
           <CardHeader
             className={`${archivo_narrow.className} text-2xl md:text-5xl  
@@ -118,15 +120,17 @@ export default function TextCard({
               ))}
             </div>
           </CardBody>
-          <CardFooter>
-            <Link
-              className="text-base md:text-xl p-2 hover:bg-transparent border 
-                    hover:border-black hover:text-black bg-black text-white rounded-lg transition"
-              href={cardFooterPath}
-            >
-              {cardFooterText}
-            </Link>
-          </CardFooter>
+          {cardFooterPath != null && cardFooterText != null ? (
+            <CardFooter>
+              <Link
+                className="text-base md:text-xl p-2 hover:bg-transparent border 
+                      hover:border-black hover:text-black bg-black text-white rounded-lg transition"
+                href={cardFooterPath}
+              >
+                {cardFooterText}
+              </Link>
+            </CardFooter>
+          ) : null}
         </Card>
       </div>
     );

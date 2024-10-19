@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <Navbar
-      className={`${pragati_narrow.className} bg-black fixed top-0 left-0 w-full`}
+      className={`${pragati_narrow.className} bg-black bg-opacity-70 fixed top-0 left-0 w-full`}
       height={"4.5rem"}
       isBordered
       position="static"

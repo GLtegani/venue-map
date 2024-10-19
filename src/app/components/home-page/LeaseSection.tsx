@@ -23,19 +23,15 @@ export default function LeaseSection() {
 
       <TextCard
         cardTitle={[
-          "Procurando Sala Comercial",
-          "Para &Aluguel ou &Compra?",
-          "Entre em Contato",
-          "Com Nossos Corretores",
+          "Com uma ótima localização",
+          "Estamos no &Centro de",
+          "Osasco, em frente a",
+          "Ponte metálica!",
         ]}
         cardText={[
-          "Salas com vista para a ponte metálica, ",
-          "segurança 24h por dia e ótimos ",
-          "espaços para acomodar a sua empresa!",
-          "Clique aqui para saber mais",
+          "R. Narciso Sturlini, 62 - Centro",
+          "Edifício Chronos Corporate",
         ]}
-        cardFooterPath="/contact"
-        cardFooterText="Entre em Contato"
         isRight
       />
     </main>

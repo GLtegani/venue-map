@@ -26,6 +26,8 @@ const config: Config = {
       backgroundImage: {
         chronos:
           "linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(/chronos.png)",
+        chronosPonte:
+          "linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(/ponte-metalica-chronos.png)",
       },
       width: {
         "11.5/12": "95%",
