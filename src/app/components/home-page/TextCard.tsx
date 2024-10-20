@@ -21,7 +21,7 @@ export default function TextCard({
 }: TextCardProps) {
   return (
     <div
-      className={`flex border border-red-400 justify-center ${
+      className={`flex justify-center ${
         isLeft ? "2.5sm:justify-start" : "2.5sm:justify-end"
       }  items-center`}
     >
