@@ -28,6 +28,7 @@ export default function MainInfo({
                   justify-center gap-1 lg:gap-4 lg:text-6xl font-bold text-white
                 `}
         >
+          {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
           {titles.map((title, index) => {
             const titleParts = title.split(" ");
 

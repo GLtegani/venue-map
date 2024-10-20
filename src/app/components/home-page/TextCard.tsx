@@ -21,12 +21,12 @@ export default function TextCard({
 }: TextCardProps) {
   return (
     <div
-      className={`flex justify-center ${
+      className={`flex border border-red-400 justify-center ${
         isLeft ? "2.5sm:justify-start" : "2.5sm:justify-end"
       }  items-center`}
     >
       <Card
-        className={`p-5 xl:p-24 ${
+        className={`p-5 w-11/12 2.5sm:w-10/12 ls:w-8/12 xl:w-7/12 xl:p-24 ${
           isRight ? "xl:mr-14" : "xl:ml-14"
         }  text-left shadow-lg shadow-cyan-400`}
       >
