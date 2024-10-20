@@ -6,6 +6,7 @@ interface MainInfoProps {
   titles: string[];
   texts: string[];
   linkBtnText: string;
+  styledBtn: "with-border" | "full";
 }
 
 export default function MainInfo({
@@ -13,6 +14,7 @@ export default function MainInfo({
   bgImage,
   linkBtnText,
   texts,
+  styledBtn,
 }: MainInfoProps) {
   return (
     <div
@@ -60,8 +62,12 @@ export default function MainInfo({
 
           <div className="mt-4 mb-8">
             <Link
-              className="text-base md:text-xl p-2 hover:bg-transparent border 
-                    hover:border-white text-nowrap hover:text-white bg-white rounded-lg transition"
+              className={`text-base ${
+                styledBtn == "full"
+                  ? "hover:bg-transparent hover:border-white hover:text-white bg-white"
+                  : "bg-transparent hover:text-black text-white hover:bg-white"
+              } md:text-xl p-2 border 
+                     text-nowrap  rounded-lg transition`}
               href={"/about"}
             >
               {linkBtnText}

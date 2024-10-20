@@ -17,6 +17,7 @@ export default function LoginSection() {
         "Clique aqui para se cadastrar",
       ]}
       linkBtnText="Cadastrar Agora"
+      styledBtn="with-border"
     />
   );
 }

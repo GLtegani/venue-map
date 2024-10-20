@@ -15,6 +15,7 @@ export default function GuestSection() {
         "Clique aqui para saber mais",
       ]}
       linkBtnText="Conheça o Prédio"
+      styledBtn="full"
     />
   );
 }

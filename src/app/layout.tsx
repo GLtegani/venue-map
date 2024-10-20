@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import { Provider } from "./components/Provider";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 
 export const metadata: Metadata = {
