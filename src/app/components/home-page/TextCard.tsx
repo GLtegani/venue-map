@@ -19,120 +19,68 @@ export default function TextCard({
   isRight,
   isLeft,
 }: TextCardProps) {
-  if (isLeft || !isRight) {
-    return (
-      <div className="flex justify-center 2.5sm:justify-start items-center">
-        <Card className="p-5 xl:p-24 xl:ml-14 text-left shadow-lg shadow-cyan-400">
-          {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
-          <CardHeader
-            className={`${archivo_narrow.className} text-2xl md:text-5xl  
+  return (
+    <div
+      className={`flex justify-center ${
+        isLeft ? "2.5sm:justify-start" : "2.5sm:justify-end"
+      }  items-center`}
+    >
+      <Card
+        className={`p-5 xl:p-24 ${
+          isRight ? "xl:mr-14" : "xl:ml-14"
+        }  text-left shadow-lg shadow-cyan-400`}
+      >
+        {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
+        <CardHeader
+          className={`${archivo_narrow.className} text-2xl md:text-5xl  
                 lg:text-6xl font-bold text-black
               `}
-          >
-            <div>
-              {cardTitle.map((title, index) => {
-                const titleParts = title.split(" ");
+        >
+          <div>
+            {cardTitle.map((title, index) => {
+              const titleParts = title.split(" ");
 
-                return (
-                  <h2 className="mb-1" key={index}>
-                    {titleParts.map((part, partIndex) => {
-                      if (part.startsWith("&")) {
-                        const styledPart = part.slice(1);
-                        return (
-                          <span
-                            key={partIndex}
-                            className="underline decoration-cyan-400"
-                          >
-                            {styledPart}{" "}
-                          </span>
-                        );
-                      }
+              return (
+                <h2 className="mb-1" key={index}>
+                  {titleParts.map((part, partIndex) => {
+                    if (part.startsWith("&")) {
+                      const styledPart = part.slice(1);
+                      return (
+                        <span
+                          key={partIndex}
+                          className="underline decoration-cyan-400"
+                        >
+                          {styledPart}{" "}
+                        </span>
+                      );
+                    }
 
-                      return <span key={partIndex}>{part} </span>;
-                    })}
-                  </h2>
-                );
-              })}
-            </div>
-          </CardHeader>
-          <CardBody>
-            <div className="text-black lg:text-2xl text-lg sm:text-xl">
-              {cardText.map((text, index) => (
-                <p key={index}>{text}</p>
-              ))}
-            </div>
-          </CardBody>
-          {cardFooterPath != null && cardFooterText != null ? (
-            <CardFooter>
-              <Link
-                className="text-base md:text-xl p-2 hover:bg-transparent border 
+                    return <span key={partIndex}>{part} </span>;
+                  })}
+                </h2>
+              );
+            })}
+          </div>
+        </CardHeader>
+        <CardBody>
+          <div className="text-black lg:text-2xl text-lg sm:text-xl">
+            {cardText.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+          </div>
+        </CardBody>
+        {cardFooterPath != null && cardFooterText != null ? (
+          <CardFooter>
+            <Link
+              className="text-base md:text-xl text-nowrap p-2 hover:bg-transparent border 
                       hover:border-black hover:text-black bg-black text-white rounded-lg transition"
-                href={cardFooterPath}
-              >
-                {cardFooterText}
-              </Link>
-            </CardFooter>
-          ) : null}
-        </Card>
-      </div>
-    );
-  } else if (isRight) {
-    return (
-      <div className="flex justify-center 2.5sm:justify-end items-center">
-        <Card className="p-5 xl:p-24 xl:mr-14 text-left shadow-lg shadow-cyan-400">
-          {/* Para criar títulos com o estilo diferente, é obrigatório adicionar o símbolo "&" para funcionar */}
-          <CardHeader
-            className={`${archivo_narrow.className} text-2xl md:text-5xl  
-                lg:text-6xl font-bold text-black
-              `}
-          >
-            <div>
-              {cardTitle.map((title, index) => {
-                const titleParts = title.split(" ");
-
-                return (
-                  <h2 className="mb-1" key={index}>
-                    {titleParts.map((part, partIndex) => {
-                      if (part.startsWith("&")) {
-                        const styledPart = part.slice(1);
-                        return (
-                          <span
-                            key={partIndex}
-                            className="underline decoration-cyan-400"
-                          >
-                            {styledPart}{" "}
-                          </span>
-                        );
-                      }
-
-                      return <span key={partIndex}>{part} </span>;
-                    })}
-                  </h2>
-                );
-              })}
-            </div>
-          </CardHeader>
-
-          <CardBody>
-            <div className="text-black lg:text-2xl text-lg sm:text-xl">
-              {cardText.map((text, index) => (
-                <p key={index}>{text}</p>
-              ))}
-            </div>
-          </CardBody>
-          {cardFooterPath != null && cardFooterText != null ? (
-            <CardFooter>
-              <Link
-                className="text-base md:text-xl p-2 hover:bg-transparent border 
-                      hover:border-black hover:text-black bg-black text-white rounded-lg transition"
-                href={cardFooterPath}
-              >
-                {cardFooterText}
-              </Link>
-            </CardFooter>
-          ) : null}
-        </Card>
-      </div>
-    );
-  }
+              href={cardFooterPath}
+            >
+              {cardFooterText}
+            </Link>
+          </CardFooter>
+        ) : null}
+      </Card>
+    </div>
+  );
 }
