@@ -2,7 +2,7 @@ import TextCard from "./TextCard";
 
 export default function LeaseSection() {
   return (
-    <main className="flex flex-col mb-6 mx-3 mt-12 gap-10">
+    <main className="flex flex-col mb-6 mx-3 gap-10">
       <TextCard
         cardTitle={[
           "Procurando Sala Comercial",
