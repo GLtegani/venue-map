@@ -1,11 +1,12 @@
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { archivo_narrow } from "../../styles/fonts/fonts";
 import Link from "next/link";
+import { WebsitePath } from "@/app/utils/utils";
 
 interface TextCardProps {
   cardTitle: string[];
   cardText: string[];
-  cardFooterPath?: string;
+  cardFooterPath?: WebsitePath;
   cardFooterText?: string;
   isRight?: boolean;
   isLeft?: boolean;
