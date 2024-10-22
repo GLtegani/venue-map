@@ -60,7 +60,7 @@ export default function Header() {
           className="sm:hidden text-white"
         />
 
-        <NavbarMenu>
+        <NavbarMenu className="bg-black bg-opacity-70">
           <NavBarLink
             type="header"
             screenType="small"
