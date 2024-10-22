@@ -3,7 +3,7 @@ import "./styles/globals.css";
 import { Provider } from "./components/Provider";
 import Header from "./components/header/Header";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Venue Map",

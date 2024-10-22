@@ -46,7 +46,9 @@ export default function NavBarLink({
   } else {
     return (
       <Link
-        className={`w-full text-lg 2sm:text-xl md:text-2xl hover:text-cyan-400 text-black transition`}
+        className={`w-full text-lg 2sm:text-xl md:text-2xl hover:text-cyan-400 text-black 
+          transition
+        `}
         href={path}
       >
         {linkText}

@@ -9,7 +9,7 @@ import {
   NavbarMenu,
 } from "@nextui-org/navbar";
 import { useState } from "react";
-import NavBarLink from "./NavBarLink";
+import NavBarLink from "../NavBarLink";
 import Logo from "../Logo";
 
 export default function Header() {
