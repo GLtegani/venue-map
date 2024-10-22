@@ -17,6 +17,7 @@ export default function GuestSection() {
         ]}
         linkBtnText="Conheça o Prédio"
         styledBtn="full"
+        pathLink="/about"
       />
     </main>
   );

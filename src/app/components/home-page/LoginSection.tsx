@@ -19,6 +19,7 @@ export default function LoginSection() {
         ]}
         linkBtnText="Cadastrar Agora"
         styledBtn="with-border"
+        pathLink="/register"
       />
     </main>
   );

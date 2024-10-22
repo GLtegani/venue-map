@@ -1,11 +1,13 @@
 import { archivo_narrow } from "@/app/styles/fonts/fonts";
 import Link from "next/link";
+import { WebsitePath } from "../../utils/utils";
 
 interface MainInfoProps {
   bgImage: "chronos" | "chronosPonte";
   titles: string[];
   texts: string[];
   linkBtnText: string;
+  pathLink: WebsitePath;
   styledBtn: "with-border" | "full";
 }
 
@@ -15,6 +17,7 @@ export default function MainInfo({
   linkBtnText,
   texts,
   styledBtn,
+  pathLink,
 }: MainInfoProps) {
   return (
     <div
@@ -68,7 +71,7 @@ export default function MainInfo({
                   : "bg-transparent hover:text-black text-white hover:bg-white"
               } md:text-xl p-2 border 
                      text-nowrap  rounded-lg transition`}
-              href={"/about"}
+              href={pathLink}
             >
               {linkBtnText}
             </Link>

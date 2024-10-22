@@ -3,11 +3,12 @@
 import { NavbarItem, NavbarMenuItem } from "@nextui-org/navbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { WebsitePath } from "../utils/utils";
 
 interface NavBarLinkProps {
   type: "header" | "footer";
   screenType: "small" | "large";
-  path: "/" | "/about" | "/contact" | "/register";
+  path: WebsitePath;
   linkText: string;
 }
 
