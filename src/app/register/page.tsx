@@ -18,8 +18,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { archivo_narrow } from "../styles/fonts/fonts";
+import { useForm } from "react-hook-form";
 
 export default function RegisterPage() {
+  const { register, handleSubmit } = useForm();
+
   return (
     <header className="mt-24 text-center">
       <div>
