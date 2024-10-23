@@ -1,4 +1,10 @@
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { archivo_narrow } from "../../styles/fonts/fonts";
 import Link from "next/link";
 import { WebsitePath } from "@/app/utils/utils";
@@ -42,7 +48,7 @@ export default function TextCard({
               const titleParts = title.split(" ");
 
               return (
-                <h2 className="mb-1" key={index}>
+                <CardTitle className="mb-1" key={index}>
                   {titleParts.map((part, partIndex) => {
                     if (part.startsWith("&")) {
                       const styledPart = part.slice(1);
@@ -58,18 +64,18 @@ export default function TextCard({
 
                     return <span key={partIndex}>{part} </span>;
                   })}
-                </h2>
+                </CardTitle>
               );
             })}
           </div>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="text-black lg:text-2xl text-lg sm:text-xl">
             {cardText.map((text, index) => (
               <p key={index}>{text}</p>
             ))}
           </div>
-        </CardBody>
+        </CardContent>
         {cardFooterPath != null && cardFooterText != null ? (
           <CardFooter>
             <Link
